@@ -1,0 +1,107 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 340px;
+        }
+        .auto-style2 {
+            height: 26px;
+        }
+        .auto-style3 {
+            text-align: right;
+            width: 400px;
+        }
+        .auto-style4 {
+            height: 26px;
+            text-align: right;
+            width: 400px;
+        }
+        .auto-style5 {
+            width: 308px;
+        }
+        .auto-style6 {
+            height: 26px;
+            width: 308px;
+        }
+        .auto-style7 {
+            color: #FF0000;
+        }
+        .auto-style8 {
+            margin-left: 382px;
+        }
+        .auto-style9 {
+            margin-left: 114px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style3">Username:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="TextBoxUser" runat="server" Width="300px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="auto-style7" ErrorMessage="username is required"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">E-mail Id:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="TextBoxEmail" runat="server" Width="300px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="auto-style7" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Invalid email id" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" CssClass="auto-style7"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Password:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="TextBoxPass" runat="server" TextMode="Password" Width="300px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="auto-style7" ErrorMessage="password is required"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Confirm Password:</td>
+                <td class="auto-style6">
+                    <asp:TextBox ID="TextBoxConPass" runat="server" TextMode="Password" Width="300px"></asp:TextBox>
+                </td>
+                <td class="auto-style2">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" CssClass="auto-style7" ErrorMessage="confirm password is required"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBoxPass" ControlToValidate="TextBoxConPass" ErrorMessage="Both the password should be same" CssClass="auto-style7"></asp:CompareValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Country:</td>
+                <td class="auto-style5">
+                    <asp:DropDownList ID="DropDownListCountry" runat="server" Width="300px">
+                        <asp:ListItem>Canada</asp:ListItem>
+                        <asp:ListItem>Denmark</asp:ListItem>
+                        <asp:ListItem>U.K.</asp:ListItem>
+                        <asp:ListItem>India</asp:ListItem>
+                        <asp:ListItem>France</asp:ListItem>
+                        <asp:ListItem>Australia</asp:ListItem>
+                        <asp:ListItem>Brazil</asp:ListItem>
+                        <asp:ListItem>Russia</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <div>
+            <asp:Button ID="ButtonRegister" runat="server" CssClass="auto-style8" OnClick="ButtonRegister_Click" Text="Register Me" Width="152px" />
+            <asp:Button ID="Button2" runat="server" CssClass="auto-style9" Text="Sign In" Width="149px" />
+        </div>
+    </form>
+</body>
+</html>
